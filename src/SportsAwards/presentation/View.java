@@ -18,19 +18,22 @@ public class View {
     public void startUI() {
         while(keepRunning) {
             System.out.println(coordinator.printMenu());
-            System.out.println(coordinator.printMessage1());
+            System.out.print(coordinator.printMessage1());
             String input = scanner.nextLine();
 
             while(!coordinator.runValidation1(input)) {
                 System.out.println(coordinator.printInvalid1());
-                System.out.println(coordinator.printMessage1());
+                System.out.print(coordinator.printMessage1());
                 input = scanner.nextLine();
             }
 
             switch (input) {
                 case "1":
+                    System.out.println(coordinator.listSportsAward());
                     break;
-
+//                case 2:
+//                case 3:
+//                case 0:
             }
         }
     }

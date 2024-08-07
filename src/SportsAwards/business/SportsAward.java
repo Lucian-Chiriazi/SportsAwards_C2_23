@@ -1,14 +1,14 @@
 package SportsAwards.business;
 
-public class SportsAward {
+public class SportsAward implements Comparable<SportsAward> {
 
-    String year;
+    int year;
     SportsPerson winner;
     SportsPerson second;
     SportsPerson third;
     SportsTeam team;
 
-    public SportsAward(String year, SportsPerson winner, SportsPerson second, SportsPerson third , SportsTeam team) {
+    public SportsAward(int year, SportsPerson winner, SportsPerson second, SportsPerson third , SportsTeam team) {
         this.year = year;
         this.winner = winner;
         this.second = second;
@@ -16,7 +16,7 @@ public class SportsAward {
         this.team = team;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
@@ -35,5 +35,17 @@ public class SportsAward {
     public SportsTeam getTeam() {
         return team;
     }
+
+    public int compareTo(SportsAward other) {
+        if (other.getYear() > this.getYear()) {
+            return -1;
+        }
+        if (this.getYear() > other.getYear()) {
+            return 1;
+        }
+        return 0;
+    }
+
+
 
 }

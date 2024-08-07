@@ -10,4 +10,8 @@ public class SportsPerson {
         this.sport = sport;
         this.nation = nation;
     }
+
+    public String getName() {
+        return name;
+    }
 }

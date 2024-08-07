@@ -12,4 +12,8 @@ public class SportsTeam {
         this.nation = nation;
         this.teamCaptain = teamCaptain;
     }
+
+    public String getTeamName() {
+        return teamName;
+    }
 }

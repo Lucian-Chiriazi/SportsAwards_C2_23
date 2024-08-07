@@ -38,7 +38,7 @@ public class DAOImplementation implements DAO {
                 String[] parts = line.split("\\|"); // '\\' Double slash needed.
 
                 // Extract year
-                String year = parts[0];
+                int year = Integer.parseInt(parts[0]);
 
                 // Extract information about the winner and create a SportsPerson object.
                 String[] winnerParts = parts[1].split(",");

@@ -3,6 +3,8 @@ package SportsAwards.business;
 import SportsAwards.data.DAO;
 import SportsAwards.data.DAOImplementation;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Coordinator {
@@ -44,6 +46,25 @@ public class Coordinator {
     public StringBuilder printInvalid1() {
         StringBuilder output = new StringBuilder();
         output.append("Invalid input!");
+
+        return output;
+    }
+
+    public StringBuilder listSportsAward() {
+        StringBuilder output = new StringBuilder();
+        Collections.sort(sportsAward);
+
+        output.append("-------------------------------------------------------------------\n");
+        output.append(String.format("| %-4s | %-18s | %-35s |\n",
+                "Year", "Individual Award", "Team Award"));
+        output.append("-------------------------------------------------------------------\n");
+        for (SportsAward object : sportsAward) {
+            output.append(String.format("| %-4s | %-18s | %-35s |\n",
+                    object.getYear(),
+                    object.getWinner().getName(),
+                    object.getTeam().getTeamName()));
+        }
+        output.append("-------------------------------------------------------------------\n");
 
         return output;
     }

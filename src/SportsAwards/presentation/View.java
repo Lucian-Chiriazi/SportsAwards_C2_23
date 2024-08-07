@@ -26,6 +26,12 @@ public class View {
                 System.out.println(printMessage1());
                 input = scanner.nextLine();
             }
+
+            switch (input) {
+                case "1":
+                    break;
+
+            }
         }
     }
 

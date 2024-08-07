@@ -17,13 +17,13 @@ public class View {
 
     public void startUI() {
         while(keepRunning) {
-            System.out.println(printMenu());
-            System.out.println(printMessage1());
+            System.out.println(coordinator.printMenu());
+            System.out.println(coordinator.printMessage1());
             String input = scanner.nextLine();
 
             while(!coordinator.runValidation1(input)) {
-                System.out.println(printInvalid1());
-                System.out.println(printMessage1());
+                System.out.println(coordinator.printInvalid1());
+                System.out.println(coordinator.printMessage1());
                 input = scanner.nextLine();
             }
 
@@ -35,32 +35,6 @@ public class View {
         }
     }
 
-    private StringBuilder printMenu() {
-        StringBuilder output = new StringBuilder();
-        output.append("----------------------------\n");
-        output.append("Sport Award menu\n");
-        output.append("----------------------------\n");
-        output.append("List ......................1\n");
-        output.append("Select ....................2\n");
-        output.append("Sort ......................3\n");
-        output.append("Exit ......................0\n");
-        output.append("----------------------------\n");
 
-        return output;
-    }
-
-    private StringBuilder printMessage1() {
-        StringBuilder output = new StringBuilder();
-        output.append("Enter choice > ");
-
-        return output;
-    }
-
-    private StringBuilder printInvalid1() {
-        StringBuilder output = new StringBuilder();
-        output.append("Invalid input!");
-
-        return output;
-    }
 
 }

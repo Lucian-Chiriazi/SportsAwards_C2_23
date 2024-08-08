@@ -31,9 +31,15 @@ public class View {
                 case "1":
                     System.out.println(coordinator.listSportsAward());
                     break;
-//                case 2:
-//                case 3:
-//                case 0:
+                case "2":
+                    coordinator.selectSportsAward();
+                    break;
+                case "3":
+
+                    break;
+                case "0":
+                    System.out.println("Bye Bye!");
+                    System.exit(0);
             }
         }
     }

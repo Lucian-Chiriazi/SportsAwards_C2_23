@@ -6,16 +6,19 @@ import SportsAwards.data.DAOImplementation;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class Coordinator {
     private DAO dao;
     private Validation validation;
     private List<SportsAward> sportsAward;
+    private Scanner scanner;
 
     public Coordinator() {
         this.dao = new DAOImplementation();
         this.validation = new Validation();
         this.sportsAward = dao.getSportsAward();
+        this.scanner = new Scanner(System.in);
     }
 
     public boolean runValidation1(String input) {
@@ -43,6 +46,12 @@ public class Coordinator {
         return output;
     }
 
+    public StringBuilder printMessage2() {
+        StringBuilder output = new StringBuilder();
+        output.append("Enter year of the award > ");
+        return output;
+    }
+
     public StringBuilder printInvalid1() {
         StringBuilder output = new StringBuilder();
         output.append("Invalid input!");
@@ -67,5 +76,26 @@ public class Coordinator {
         output.append("-------------------------------------------------------------------\n");
 
         return output;
+    }
+
+    public void selectSportsAward() {
+        System.out.print(printMessage2());
+        String input = scanner.nextLine().trim();
+
+        while(!validation.validation2(input, sportsAward)) {
+            System.out.println(printInvalid1());
+            System.out.print(printMessage2());
+            input = scanner.nextLine().trim();
+        }
+
+
+    }
+
+    public String toString() {
+        StringBuilder output = new StringBuilder();
+
+
+
+        return output.toString();
     }
 }

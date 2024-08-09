@@ -17,14 +17,14 @@ public class View {
 
     public void startUI() {
         while(keepRunning) {
-            System.out.println(coordinator.printMenu());
+            System.out.println(coordinator.printOptionsMenu());
             System.out.print(coordinator.printMessage1());
-            String input = scanner.nextLine();
+            String input = scanner.nextLine().trim();
 
             while(!coordinator.runValidation1(input)) {
                 System.out.println(coordinator.printInvalid1());
                 System.out.print(coordinator.printMessage1());
-                input = scanner.nextLine();
+                input = scanner.nextLine().trim();
             }
 
             switch (input) {
@@ -35,7 +35,24 @@ public class View {
                     coordinator.selectSportsAward();
                     break;
                 case "3":
+                    System.out.println(coordinator.printSortMenu());
+                    System.out.print(coordinator.printMessage1());
+                    input = scanner.nextLine().trim();
 
+                    while(!coordinator.runValidation2(input)) {
+                        System.out.println(coordinator.printInvalid1());
+                        System.out.print(coordinator.printMessage1());
+                        input = scanner.nextLine().trim();
+                    }
+
+                    switch (input) {
+                        case "1":
+
+                            break;
+                        case "2":
+                        case "0":
+                            break;
+                    }
                     break;
                 case "0":
                     System.out.println("Bye Bye!");

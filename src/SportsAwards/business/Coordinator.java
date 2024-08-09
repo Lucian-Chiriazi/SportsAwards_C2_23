@@ -25,7 +25,9 @@ public class Coordinator {
         return validation.validation1(input);
     }
 
-    public StringBuilder printMenu() {
+    public boolean runValidation2(String input) { return validation.validation2(input); }
+
+    public StringBuilder printOptionsMenu() {
         StringBuilder output = new StringBuilder();
         output.append("----------------------------\n");
         output.append("Sport Award menu\n");
@@ -35,6 +37,19 @@ public class Coordinator {
         output.append("Sort ......................3\n");
         output.append("Exit ......................0\n");
         output.append("----------------------------\n");
+
+        return output;
+    }
+
+    public StringBuilder printSortMenu() {
+        StringBuilder output = new StringBuilder();
+        output.append("--------------------------------------\n");
+        output.append("Sort Options \n");
+        output.append("--------------------------------------\n");
+        output.append("Sort awards won by sport ............1\n");
+        output.append("Sort awards won by sports person ....2\n");
+        output.append("Back to main menu ...................0\n");
+        output.append("--------------------------------------\n");
 
         return output;
     }

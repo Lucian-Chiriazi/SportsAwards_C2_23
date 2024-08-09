@@ -12,6 +12,12 @@ public class Validation {
         return pattern.matcher(input).matches();
     }
 
+    public boolean validation2(String input) {
+        String regex = "^[012]$";
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(input).matches();
+    }
+
     public boolean validation2(String input, List<SportsAward> sportsAwardList) {
         Collections.sort(sportsAwardList);
         int tempValue = Integer.parseInt(input);

@@ -88,14 +88,10 @@ public class Coordinator {
             input = scanner.nextLine().trim();
         }
 
-
-    }
-
-    public String toString() {
-        StringBuilder output = new StringBuilder();
-
-
-
-        return output.toString();
+        for (SportsAward object : sportsAward) {
+            if (object.getYear() == Integer.parseInt(input)) {
+                System.out.println(object);
+            }
+        }
     }
 }

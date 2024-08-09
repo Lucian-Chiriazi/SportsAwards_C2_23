@@ -14,4 +14,12 @@ public class SportsPerson {
     public String getName() {
         return name;
     }
+
+    public String getSport() {
+        return sport;
+    }
+
+    public String getNation() {
+        return nation;
+    }
 }

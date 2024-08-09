@@ -16,4 +16,12 @@ public class SportsTeam {
     public String getTeamName() {
         return teamName;
     }
+
+    public String getTeamCaptain() {
+        return teamCaptain;
+    }
+
+    public String getNation() {
+        return nation;
+    }
 }

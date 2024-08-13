@@ -18,7 +18,7 @@ public class Validation {
         return pattern.matcher(input).matches();
     }
 
-    public boolean validation2(String input, List<SportsAward> sportsAwardList) {
+    public boolean validation3(String input, List<SportsAward> sportsAwardList) {
         Collections.sort(sportsAwardList);
         int tempValue = Integer.parseInt(input);
         int lowerEnd = sportsAwardList.get(0).getYear();

@@ -97,7 +97,7 @@ public class Coordinator {
         System.out.print(printMessage2());
         String input = scanner.nextLine().trim();
 
-        while(!validation.validation2(input, sportsAward)) {
+        while(!validation.validation3(input, sportsAward)) {
             System.out.println(printInvalid1());
             System.out.print(printMessage2());
             input = scanner.nextLine().trim();

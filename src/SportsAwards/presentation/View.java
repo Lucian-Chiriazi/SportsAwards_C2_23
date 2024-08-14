@@ -47,7 +47,7 @@ public class View {
 
                     switch (input) {
                         case "1":
-
+                            coordinator.sortAwardsBySport();
                             break;
                         case "2":
                         case "0":

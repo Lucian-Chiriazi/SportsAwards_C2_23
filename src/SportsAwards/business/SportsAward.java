@@ -53,16 +53,16 @@ public class SportsAward implements Comparable<SportsAward> {
         StringBuilder output = new StringBuilder();
         String teamName = this.team.getTeamName();
         String teamCaptain = this.team.getTeamCaptain();
-        String teamNation = getCountryName(this.team.getNation());
+        String teamNation = provideFullNationName(this.team.getNation());
         String winnerName = this.winner.getName().toUpperCase();
         String winnerSport = this.winner.getSport().toUpperCase();
-        String winnerNation = getCountryName(this.winner.getNation()).toUpperCase();
+        String winnerNation = provideFullNationName(this.winner.getNation()).toUpperCase();
         String secondName = this.second.getName();
         String secondSport = this.second.getSport();
-        String secondNation = getCountryName(this.second.getNation());
+        String secondNation = provideFullNationName(this.second.getNation());
         String thirdName = this.third.getName();
         String thirdSport = this.third.getSport();
-        String thirdNation = getCountryName(this.third.getNation());
+        String thirdNation = provideFullNationName(this.third.getNation());
         String personHead = "Individual Sports Person";
         String teamHead = "Team";
 
@@ -103,7 +103,7 @@ public class SportsAward implements Comparable<SportsAward> {
         return output.toString();
     }
 
-    private String getCountryName(String initials) {
+    private String provideFullNationName(String initials) {
         Map<String, String> countryMap = new HashMap<>();
         countryMap.put("ENG", "England");
         countryMap.put("WAL", "Wales");

@@ -7,7 +7,8 @@
     <list default="true" id="88dea73a-b6fe-4f75-abee-211e83962ce9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SportsAwards/business/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SportsAwards/business/Coordinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SportsAwards/business/Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SportsAwards/business/Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SportsAwards/business/SportAwardCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SportsAwards/business/SportAwardCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SportsAwards/business/SportsAward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SportsAwards/business/SportsAward.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,7 +74,8 @@
       <updated>1723013523840</updated>
       <workItem from="1723029280216" duration="22194000" />
       <workItem from="1723181579034" duration="4044000" />
-      <workItem from="1723561143183" duration="3457000" />
+      <workItem from="1723561143183" duration="8693000" />
+      <workItem from="1723580182181" duration="10727000" />
     </task>
     <servers />
   </component>

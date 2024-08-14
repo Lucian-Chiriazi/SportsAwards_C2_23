@@ -50,6 +50,7 @@ public class View {
                             coordinator.sortAwardsBySport();
                             break;
                         case "2":
+                            coordinator.sortAwardsByPerson();
                         case "0":
                             break;
                     }

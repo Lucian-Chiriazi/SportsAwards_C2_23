@@ -10,8 +10,10 @@ public class Coordinator {
     private Validation validation;
     private List<SportsAward> sportsAward;
     private Scanner scanner;
-    private List<SportAwardCount> sortedAwards;
+    private List<SportAwardCount> sortedSportAwards;
     private Map<String, SportAwardCount> sportAwardCounts;
+    private List<PersonAwardCount> sortedPersonAwards;
+    private Map<String, PersonAwardCount> personAwardCounts;
 
     public Coordinator() {
 
@@ -19,8 +21,8 @@ public class Coordinator {
         this.validation = new Validation();
         this.sportsAward = dao.getSportsAward();
         this.scanner = new Scanner(System.in);
-        this.sortedAwards = new ArrayList<>();
         this.sportAwardCounts = new HashMap<>();
+        this.personAwardCounts = new HashMap<>();
     }
 
     public boolean runValidation1(String input) {
@@ -118,8 +120,24 @@ public class Coordinator {
             incrementAwardCount(sportAwardCounts, object.second.getSport(), 2);
             incrementAwardCount(sportAwardCounts, object.third.getSport(), 3);
         }
-        sortedAwards.sort(new SportAwardCountComparator());
-        displaySportData(sortedAwards);
+
+
+        this.sortedSportAwards = new ArrayList<>(sportAwardCounts.values());
+        sortedSportAwards.sort(new SportAwardCountComparator());
+        displaySportData(sortedSportAwards);
+    }
+
+    public void sortAwardsByPerson() {
+        for (SportsAward object : sportsAward) {
+            incrementPersonAwardCount(personAwardCounts, object.winner.getName(), 1);
+            incrementPersonAwardCount(personAwardCounts, object.second.getName(), 2);
+            incrementPersonAwardCount(personAwardCounts, object.third.getName(), 3);
+        }
+
+        this.sortedPersonAwards = new ArrayList<>(personAwardCounts.values());
+        sortedPersonAwards.sort(new PersonAwardCountComparator());
+        displayPersonSportData(sortedPersonAwards);
+
     }
 
     private static void incrementAwardCount(Map<String, SportAwardCount> sportAwardCounts, String sport, int place) {
@@ -138,13 +156,29 @@ public class Coordinator {
         sportAwardCounts.put(sport, count);
     }
 
-    public static void displaySportData(List<SportAwardCount> sortedAwards) {
+    private static void incrementPersonAwardCount(Map<String, PersonAwardCount> personAwardCounts, String name, int place) {
+        PersonAwardCount count = personAwardCounts.getOrDefault(name, new PersonAwardCount(name));
+        switch (place) {
+            case 1:
+                count.incrementFirstPlace();
+                break;
+            case 2:
+                count.incrementSecondPlace();
+                break;
+            case 3:
+                count.incrementThirdPlace();
+                break;
+        }
+        personAwardCounts.put(name, count);
+    }
+
+    public static void displaySportData(List<SportAwardCount> sortedSportAwards) {
         // Print table header
         System.out.println("-------------------------------------------------------------------------------");
         System.out.println("| Sport              | First Place | Second Place | Third Place | Total       |");
         System.out.println("-------------------------------------------------------------------------------");
 
-        for (SportAwardCount stats : sortedAwards) {
+        for (SportAwardCount stats : sortedSportAwards) {
             System.out.printf("| %-18s | %-11d | %-12d | %-11d | %-11d |%n",
                     stats.getSport(),
                     stats.getFirstPlace(),
@@ -157,4 +191,22 @@ public class Coordinator {
         System.out.println("-------------------------------------------------------------------------------");
     }
 
+    public static void displayPersonSportData(List<PersonAwardCount> sortedPersonSportAwards) {
+        // Print table header
+        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println("| Sport              | First Place | Second Place | Third Place | Total       |");
+        System.out.println("-------------------------------------------------------------------------------");
+
+        for (PersonAwardCount stats : sortedPersonSportAwards) {
+            System.out.printf("| %-18s | %-11d | %-12d | %-11d | %-11d |%n",
+                    stats.getPerson(),
+                    stats.getFirstPlace(),
+                    stats.getSecondPlace(),
+                    stats.getThirdPlace(),
+                    stats.getTotalCount()
+            );
+        }
+        // Print the table footer
+        System.out.println("-------------------------------------------------------------------------------");
+    }
 }
